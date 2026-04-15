@@ -7,6 +7,8 @@ ARCH="$(uname -m)"
 BREW_PREFIX="/opt/homebrew"
 BREW_BIN="$BREW_PREFIX/bin/brew"
 MISE_BIN="$BREW_PREFIX/bin/mise"
+CLAUDE_DIR="$HOME/.claude"
+VSCODE_USER_DIR="$HOME/Library/Application Support/Code/User"
 
 step() { printf '\n[dotfiles] -> %s\n' "$1"; }
 info() { printf '[dotfiles]    %s\n' "$1"; }
@@ -138,6 +140,9 @@ main() {
   link_file "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
   link_file "$DOTFILES_DIR/git/.gitconfig" "$HOME/.gitconfig"
   link_file "$DOTFILES_DIR/git/.gitignore_global" "$HOME/.gitignore_global"
+  link_file "$DOTFILES_DIR/claude/settings.json" "$CLAUDE_DIR/settings.json"
+  link_file "$DOTFILES_DIR/claude/plugins/config.json" "$CLAUDE_DIR/plugins/config.json"
+  link_file "$DOTFILES_DIR/vscode/keybindings.json" "$VSCODE_USER_DIR/keybindings.json"
 
   copy_gitconfig_local
   install_mise_tools
