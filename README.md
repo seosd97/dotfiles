@@ -29,7 +29,7 @@ After that, finish the install and run `./install.sh` again.
 
 ## After Install
 
-Restart the terminal, then open OrbStack once to finish its initial setup.
+Restart the terminal, then open OrbStack once to initialize it.
 
 The git identity template is created automatically at `~/.gitconfig.local`.
 Just update the name and email with real values.
